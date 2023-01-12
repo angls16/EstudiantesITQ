@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudiantesITQ.ListadoEstudiantes"
+             NavigationPage.HasNavigationBar="False">
+               
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Listado Estudiantes" FontSize="Large" HeightRequest="50"
+                   FontAttributes="Bold"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <ListView x:Name="lstEstudiantes" SelectionMode="Single" ItemSelected="lstEstudiantes_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".1*"/>
+                                        <ColumnDefinition Width=".2*"/>
+                                        <ColumnDefinition Width=".3*"/>
+                                        <ColumnDefinition Width=".4*"/>
+                                        <ColumnDefinition Width=".5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+
+
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text="{Binding codigo}" Grid.Column="0" 
+                                           FontAttributes="Bold" FontSize="10" />
+                                    <Label Text="{Binding nombre}" Grid.Column="1" 
+                                           FontAttributes="Bold" FontSize="10" />
+                                    <Label Text="{Binding apellido}" Grid.Column="2" 
+                                           FontAttributes="Bold" FontSize="10" />
+                                    <Label Text="{Binding correo}" Grid.Column="3" 
+                                           FontAttributes="Bold" FontSize="10" />
+                                    <Label Text="{Binding telefono}" Grid.Column="4" 
+                                           FontAttributes="Bold" FontSize="10" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Insertar" x:Name="btnInsertar" Clicked="btnInsertar_Clicked" />
+            <Button Text="Eliminar" x:Name="btnEliminar" Clicked="btnEliminar_Clicked"  />
+            <Button Text="Eliminar Datos" x:Name="btnEliminarID" Clicked="btnEliminarID_Clicked" TextColor="White" BackgroundColor="Red"/>
+            <Button Text="Editar" x:Name="btnEditar" Clicked="btnEditar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
